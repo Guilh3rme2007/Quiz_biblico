@@ -485,7 +485,7 @@ const questions = [
             { text: "Levi", correct: false },
             { text: "Judá", correct: false }
         ]
-    }
+    },
     {
         question: "Contra que animais Davi lutou quando era jovem?",
         answers: [
