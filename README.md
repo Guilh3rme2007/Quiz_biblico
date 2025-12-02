@@ -8,6 +8,8 @@ Esse quiz contém questões de opções e de verdadeiro ou falso, sobre curiosid
 
 Basta acessar o link do jogo que está aqui a baixo ou ler o qr code 
 
+[link para o quiz](https://guilh3rme2007.github.io/Quiz_biblico/)
+![Qr Code para o quiz](images/qrcode_pagina.jpg)
 
 
 Instruções:
