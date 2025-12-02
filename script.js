@@ -298,7 +298,7 @@ const questions = [
         ]
     },
     {
-        question: "Qual o ultimo livro do Novo Testamento?",
+        question: "Qual o último livro do Novo Testamento?",
         answers: [
             { text: "Judas", correct: false },
             { text: "Apocalipse", correct: true },
@@ -316,7 +316,7 @@ const questions = [
         ]
     },
     {
-        question: "Qual é o ultimo livro do Antigo Testamento?",
+        question: "Qual é o último livro do Antigo Testamento?",
         answers: [
             { text: "Malaquias", correct: true },
             { text: "Ageu", correct: false },
@@ -478,7 +478,142 @@ const questions = [
         ]
     },
     {
-        
+        question: "Qual filho de Jacó foi vendido como escravo pelos seus irmãos?",
+        answers: [
+            { text: "Efraim", correct: false },
+            { text: "José", correct: true },
+            { text: "Levi", correct: false },
+            { text: "Judá", correct: false }
+        ]
+    }
+    {
+        question: "Contra que animais Davi lutou quando era jovem?",
+        answers: [
+            { text: "Leão e urso", correct: true },
+            { text: "Leão e lobo", correct: false },
+            { text: "Urso e lobo", correct: false },
+            { text: "Leão e leopardo", correct: false }
+        ]
+    },
+    {
+        question: "Qual é o simbolo do Espírito Santo mencionado no batismo de Jesus?",
+        answers: [
+            { text: "Pomba", correct: true },
+            { text: "Fogo", correct: false },
+            { text: "Vento", correct: false },
+            { text: "Água", correct: false }
+        ]
+    },
+    {
+        question: "Quem foi o profeta que ungiu Saul como o primeiro rei de Israel?",
+        answers: [
+            { text: "Samuel", correct: true },
+            { text: "Elias", correct: false },
+            { text: "Eliseu", correct: false },
+            { text: "Natã", correct: false }
+        ]
+    },
+    {
+        question: "Quem foi a primeira pessoa a ver Jesus ressuscitado?",
+        answers: [
+            { text: "Pedro", correct: false },
+            { text: "Maria Madalena", correct: true },
+            { text: "João", correct: false },
+            { text: "Tomé", correct: false }
+        ]
+    },
+    {
+        question: "Onde Moisés recebeu os Dez Mandamentos?",
+        answers: [
+            { text: "Monte Sinai", correct: true },
+            { text: "Monte Horebe", correct: false },
+            { text: "Monte Ararat", correct: false },
+            { text: "Monte Carmelo", correct: false }
+        ]
+    },
+    {
+        question: "Onde cairam as sementes que deram fruto cem, sessenta e trinta vezes?",
+        answers: [
+            { text: "No solo rochoso", correct: false },
+            { text: "No solo à beira do caminho", correct: false },
+            { text: "No solo com espinhos", correct: false },
+            { text: "No solo fértil", correct: true }
+        ]
+    },
+    {
+        question: "A fruta proibida que Adão e Eva comeram era maçã?",
+        answers: [
+            { text: "Verdadeiro", correct: false },
+            { text: "Falso", correct: true }
+        ]
+    },
+    {
+        question: "Quantas virgens são mencionadas na parábola de Jesus?",
+        answers: [
+            { text: "6", correct: false },
+            { text: "8", correct: false },
+            { text: "10", correct: true },
+            { text: "12", correct: false }
+        ]
+    },
+    {
+        question: "Tarso, Lícia, Sidom, Jope são cidades ou nomes de pessoas?",
+        answers: [
+            { text: "Cidades", correct: true },
+            { text: "Nomes de pessoas", correct: false }
+        ]
+    },
+    {
+        question: "Jonas pregou em Nínive?",
+        answers: [
+            { text: "Verdadeiro", correct: true },
+            { text: "Falso", correct: false }
+        ]
+    },
+    {
+        question: "Qual é o nome do gigante que Davi derrotou com uma funda?",
+        answers: [
+            { text: "Golias", correct: true },
+            { text: "Goliath", correct: false },
+            { text: "Goliathus", correct: false },
+            { text: "Goliathes", correct: false }
+        ]
+    },
+    {
+        question: "Qual foi o profeta que teve uma visão de um vale de ossos secos?",
+        answers: [
+            { text: "Ezequiel", correct: true },
+            { text: "Isaías", correct: false },
+            { text: "Jeremias", correct: false },
+            { text: "Daniel", correct: false }
+        ]
+    },
+    {
+        question: "Quem foi o pai de João Batista?",
+        answers: [
+            { text: "Zacarias", correct: true },
+            { text: "José", correct: false },
+            { text: "Pedro", correct: false },
+            { text: "Tiago", correct: false }
+        ]
+    },
+    {
+        question:"Qual foi o profeta que viu o trono de Deus em uma visão?",
+        answers: [
+            { text: "Isaías", correct: true },
+            { text: "Ezequiel", correct: false },
+            { text: "Jeremias", correct: false },
+            { text: "Daniel", correct: false }
+        ]
+    },
+    {
+        question: "Qual foi o autor do livro de Atos dos Apóstolos?",
+        answers: [
+            { text: "Pedro", correct: false },
+            { text: "Lucas", correct: true },
+            { text: "João", correct: false },
+            { text: "Tiago", correct: false }
+        ]
     }
 ]
 
