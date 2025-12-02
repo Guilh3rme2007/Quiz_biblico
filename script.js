@@ -367,7 +367,119 @@ const questions = [
             { text: "Pastor", correct: false }
         ]
     },
-
+    {
+        question: "Paulo escreveu quantas cartas no Novo Testamento?",
+        answers: [
+            { text: "10", correct: false },
+            { text: "13", correct: true },
+            { text: "7", correct: false },
+            { text: "5", correct: false }
+        ]
+    },
+    {
+        question: "Paulo disse que os crentes de Corinto estavam divididos",
+        answers: [
+            { text: "Verdadeiro", correct: true },
+            { text: "Falso", correct: false }
+        ]
+    },
+    {
+        question: "O texto de 1 Coríntios 6:19-20 fala que somente o corpo dos líderes é templo do Espírito Santo",
+        answers: [
+            { text: "Verdadeiro", correct: false },
+            { text: "Falso", correct: true }
+        ]
+    },
+    {
+        question: "A santa ceia foi instituída como uma sobremesa após o jantar",
+        answers: [
+            { text: "Verdadeiro", correct: false },
+            { text: "Falso", correct: true }
+        ]
+    },
+    {
+        question: "Quem é o consolador prometido por Jesus em João 14?",
+        answers: [
+            { text: "O Espírito Santo", correct: true },
+            { text: "O anjo Gabriel", correct: false },
+            { text: "João Batista", correct: false },
+            { text: "Pedro", correct: false }
+        ]
+    },
+    {
+        question: "Qual dessas opções não é uma das bem-aventuranças mencionadas por Jesus no Sermão da Montanha?",
+        answers: [
+            { text: "Bem-aventurados os humildes de espírito", correct: false },
+            { text: "Bem-aventurados os que choram", correct: false },
+            { text: "Bem-aventurados os perversos de coração", correct: true },
+            { text: "Bem-aventurados os pacificadores", correct: false }
+        ]
+    },
+    {
+        question: "Quais foram as promessas feitas pelo diabo a Jesus durante as tentações no deserto?",
+        answers: [
+            { text: "Poder, riqueza e fama", correct: false },
+            { text: "Reino do mundo, poder e glória", correct: true },
+            { text: "Vida eterna, saúde e paz", correct: false },
+            { text: "Sabedoria, força e coragem", correct: false }
+        ]
+    },
+    {
+        question: "Quais eram os tipos de solo mencionados na parábola do semeador?",
+        answers: [
+            { text: "Solo rochoso, solo arenoso, solo fértil e solo pedregoso", correct: false },
+            { text: "Solo à beira do caminho, solo pedregoso, solo com espinhos e solo fértil", correct: true },
+            { text: "Solo úmido, solo seco, solo fértil e solo infértil", correct: false },
+            { text: "Solo montanhoso, solo plano, solo fértil e solo árido", correct: false }
+        ]
+    },
+    {
+        question: "Qual animal falou com Balaão?",
+        answers: [
+            { text: "Cavalo", correct: false },
+            { text: "Jumento", correct: true },
+            { text: "Cão", correct: false },
+            { text: "Leão", correct: false }
+        ]
+    },
+    {
+        question: "O dicípulo Lucas era pescador?",
+        answers: [
+            { text: "Verdadeiro", correct: false },
+            { text: "Falso", correct: true }
+        ]
+    },
+    {
+        question: "Tiago afirmou que a fé sem obras é morta?",
+        answers: [
+            { text: "Verdadeiro", correct: true },
+            { text: "Falso", correct: false }
+        ]
+    },
+    {
+        question: "Tiago afirma que o homem de coração dobrado é amigo de Deus?",
+        answers: [
+            { text: "Verdadeiro", correct: false },
+            { text: "Falso", correct: true }
+        ]
+    },
+    {
+        question: "Tiago afirma que somos tentados por Deus?",
+        answers: [
+            { text: "Verdadeiro", correct: false },
+            { text: "Falso", correct: true }
+        ]
+    },
+    {
+        question: "Segundo Tiago a língua é um fogo que pode contaminar todo o corpo?",
+        answers: [
+            { text: "Verdadeiro", correct: true },
+            { text: "Falso", correct: false }
+        ]
+    },
+    {
+        
+    }
 ]
 
 
