@@ -614,7 +614,273 @@ const questions = [
             { text: "João", correct: false },
             { text: "Tiago", correct: false }
         ]
+    },
+    {
+        question: "Paulo é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Herodes é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Tiago é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Barnabé é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Simeão é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Saulo é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Cornélio é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Prócoro é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Nicanor é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Marta é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Timóteo é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Levi é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Ananias é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Eneias é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Silas é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Zebedeu é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Tomé é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Bartolomeu é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Alfeu é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Simão é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Lázaro é uma:",
+        answers: [
+            { text: "Cidade", correct: false},
+            { text: "Pessoa", correct: true}
+        ]
+    },
+    {
+        question: "Ai é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Cesareia é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Betânia é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },{
+        question: "Filístia é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Galileia é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Damasco é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Tarso é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Bitínia é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Cirene é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Emaús é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Betsaida é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Samaria é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Bereia é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Jope é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Antioquia é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Sidom é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Malta é uma:",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
     }
+
 ]
 
 
