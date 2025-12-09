@@ -30,96 +30,6 @@ const questions = [
         ]
     },
     {
-        question: "Quem foi o sumo sacerdote que condenou Jesus perante Pilatos?",
-        answers: [
-            { text: "Caifás", correct: true },
-            { text: "Anás", correct: false },
-            { text: "Herodes", correct: false },
-            { text: "Gamaliel", correct: false }
-        ]
-    },
-    {
-        question: "Quantas pragas Deus enviou sobre o Egito?",
-        answers: [
-            { text: "7", correct: false },
-            { text: "10", correct: true },
-            { text: "12", correct: false },
-            { text: "5", correct: false }
-        ]
-    },
-    {
-        question: "Em qual livro bíblico encontramos a história de Sansão?",
-        answers: [
-            { text: "Juízes", correct: true },
-            { text: "Rute", correct: false },
-            { text: "Samuel", correct: false },
-            { text: "Reis", correct: false }
-        ]
-    },
-    {
-        question: "Qual o nome da cidade onde Paulo teve a visão do 'Macedônio' pedindo ajuda?",
-        answers: [
-            { text: "Atenas", correct: false },
-            { text: "Jerusalém", correct: false },
-            { text: "Trôade", correct: true },
-            { text: "Corinto", correct: false }
-        ]
-    },
-    {
-        question: "Quem foi o pai de Abraão?",
-        answers: [
-            { text: "Isaque", correct: false },
-            { text: "Noé", correct: false },
-            { text: "Terá", correct: true },
-            { text: "Jacó", correct: false }
-        ]
-    },
-    {
-        question: "O livro de Salmos é dividido em quantos livros ou coleções?",
-        answers: [
-            { text: "3", correct: false },
-            { text: "5", correct: true },
-            { text: "7", correct: false },
-            { text: "4", correct: false }
-        ]
-    },
-    {
-        question: "Qual o nome da esposa de Moisés?",
-        answers: [
-            { text: "Miriã", correct: false },
-            { text: "Zípora", correct: true },
-            { text: "Joquebede", correct: false },
-            { text: "Raquel", correct: false }
-        ]
-    },
-    {
-        question: "Qual apóstolo foi escolhido para substituir Judas Iscariotes?",
-        answers: [
-            { text: "Barnabé", correct: false },
-            { text: "Matias", correct: true },
-            { text: "Silas", correct: false },
-            { text: "Timóteo", correct: false }
-        ]
-    },
-    {
-        question: "Jesus andou sobre qual mar/lago?",
-        answers: [
-            { text: "Mar Morto", correct: false },
-            { text: "Mar Vermelho", correct: false },
-            { text: "Mar da Galileia (ou Lago de Genesaré)", correct: true },
-            { text: "Rio Jordão", correct: false }
-        ]
-    },
-    {
-        question: "Qual profeta foi levado ao céu em uma carruagem de fogo?",
-        answers: [
-            { text: "Eliseu", correct: false },
-            { text: "Elias", correct: true },
-            { text: "Isaías", correct: false },
-            { text: "Jeremias", correct: false }
-        ]
-    },
-    {
         question: "Quantos Apóstolos Jesus tinha?",
         answers: [
             { text: "10", correct: false },
@@ -228,12 +138,30 @@ const questions = [
         ]
     },
     {
+        question: "Qual o nome da cidade onde Paulo teve a visão do 'Macedônio' pedindo ajuda?",
+        answers: [
+            { text: "Atenas", correct: false },
+            { text: "Jerusalém", correct: false },
+            { text: "Trôade", correct: true },
+            { text: "Corinto", correct: false }
+        ]
+    },
+    {
         question: "Quem foi o pai de Abraão?",
         answers: [
             { text: "Isaque", correct: false },
             { text: "Noé", correct: false },
             { text: "Terá", correct: true },
             { text: "Jacó", correct: false }
+        ]
+    },
+    {
+        question: "O livro de Salmos é dividido em quantos livros ou coleções?",
+        answers: [
+            { text: "3", correct: false },
+            { text: "5", correct: true },
+            { text: "7", correct: false },
+            { text: "4", correct: false }
         ]
     },
     {
@@ -444,7 +372,7 @@ const questions = [
         ]
     },
     {
-        question: "Quem foi resuscitado por Jesus após quatro dias de morte?",
+        question: "Quem foi ressuscitado por Jesus após quatro dias de morte?",
         answers: [
             { text: "Lázaro", correct: true },
             { text: "Jairo", correct: false },
@@ -694,7 +622,7 @@ const questions = [
         ]
     },
     {
-        question: "Onde cairam as sementes que deram fruto cem, sessenta e trinta vezes?",
+        question: "Onde caíram as sementes que deram fruto cem, sessenta e trinta vezes?",
         answers: [
             { text: "No solo rochoso", correct: false },
             { text: "No solo à beira do caminho", correct: false },
@@ -777,273 +705,365 @@ const questions = [
             { text: "Tiago", correct: false }
         ]
     },
+    // --- OTIMIZAÇÃO DAS PERGUNTAS SOBRE "PESSOA OU CIDADE" ---
+    // A forma "X é uma:" foi alterada para "X é uma pessoa ou uma cidade?" para melhor fluidez em Português.
     {
-        question: "Paulo é uma:",
+        question: "Paulo é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Herodes é uma:",
+        question: "Herodes é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Tiago é uma:",
+        question: "Tiago é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Barnabé é uma:",
+        question: "Barnabé é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Simeão é uma:",
+        question: "Simeão é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Saulo é uma:",
+        question: "Saulo é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Cornélio é uma:",
+        question: "Cornélio é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Prócoro é uma:",
+        question: "Prócoro é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Nicanor é uma:",
+        question: "Nicanor é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Marta é uma:",
+        question: "Marta é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Timóteo é uma:",
+        question: "Timóteo é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Levi é uma:",
+        question: "Levi é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Ananias é uma:",
+        question: "Ananias é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Eneias é uma:",
+        question: "Eneias é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Silas é uma:",
+        question: "Silas é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Zebedeu é uma:",
+        question: "Zebedeu é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Tomé é uma:",
+        question: "Tomé é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Bartolomeu é uma:",
+        question: "Bartolomeu é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Alfeu é uma:",
+        question: "Alfeu é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Simão é uma:",
+        question: "Simão é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Lázaro é uma:",
+        question: "Lázaro é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: false},
             { text: "Pessoa", correct: true}
         ]
     },
     {
-        question: "Ai é uma:",
+        question: "Ai é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Cesareia é uma:",
+        question: "Cesareia é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Betânia é uma:",
-        answers: [
-            { text: "Cidade", correct: true},
-            { text: "Pessoa", correct: false}
-        ]
-    },{
-        question: "Filístia é uma:",
+        question: "Betânia é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Galileia é uma:",
+        question: "Filístia é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Damasco é uma:",
+        question: "Galileia é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Tarso é uma:",
+        question: "Damasco é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Bitínia é uma:",
+        question: "Tarso é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Cirene é uma:",
+        question: "Bitínia é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Emaús é uma:",
+        question: "Cirene é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Betsaida é uma:",
+        question: "Emaús é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Samaria é uma:",
+        question: "Betsaida é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Bereia é uma:",
+        question: "Samaria é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Jope é uma:",
+        question: "Bereia é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Antioquia é uma:",
+        question: "Jope é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Sidom é uma:",
+        question: "Antioquia é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
     },
     {
-        question: "Malta é uma:",
+        question: "Sidom é uma pessoa ou uma cidade?",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Malta é uma pessoa ou uma cidade?",
+        answers: [
+            { text: "Cidade", correct: true},
+            { text: "Pessoa", correct: false}
+        ]
+    },
+    {
+        question: "Quem foi o profeta que foi engolido por um grande peixe?",
+        answers: [
+            { text: "Elias", correct: false },
+            { text: "Jonas", correct: true },
+            { text: "Jeremias", correct: false },
+            { text: "Isaías", correct: false }
+        ]
+    },
+    {
+        question: "Qual era o nome original de Pedro, um dos 12 apóstolos?",
+        answers: [
+            { text: "Saulo", correct: false },
+            { text: "Simão", correct: true },
+            { text: "João", correct: false },
+            { text: "André", correct: false }
+        ]
+    },
+    {
+        question: "Qual era a nação de origem da Rainha de Sabá?",
+        answers: [
+            { text: "Etiópia", correct: false },
+            { text: "Arábia", correct: true },
+            { text: "Egito", correct: false },
+            { text: "Assíria", correct: false }
+        ]
+    },
+    {
+        question: "Quem matou o gigante Golias?",
+        answers: [
+            { text: "Saul", correct: false },
+            { text: "Davi", correct: true },
+            { text: "Sansão", correct: false },
+            { text: "Jônatas", correct: false }
+        ]
+    },
+    {
+        question: "Quantos livros a Bíblia tem no total (Antigo e Novo Testamento)?",
+        answers: [
+            { text: "60", correct: false },
+            { text: "72", correct: false },
+            { text: "66", correct: true },
+            { text: "39", correct: false }
+        ]
+    },
+    {
+        question: "Qual o livro do Antigo Testamento que não menciona a palavra 'Deus'?",
+        answers: [
+            { text: "Cantares de Salomão", correct: false },
+            { text: "Ester", correct: true },
+            { text: "Obadias", correct: false },
+            { text: "Jonas", correct: false }
+        ]
+    },
+    {
+        question: "Jesus ressuscitou a filha de qual homem?",
+        answers: [
+            { text: "Lázaro", correct: false },
+            { text: "Nicodemos", correct: false },
+            { text: "Zaqueu", correct: false },
+            { text: "Jairo", correct: true }
+        ]
+    },
+    {
+        question: "Quem foi a mãe de João Batista?",
+        answers: [
+            { text: "Maria", correct: false },
+            { text: "Isabel", correct: true },
+            { text: "Ana", correct: false },
+            { text: "Sara", correct: false }
+        ]
+    },
+    {
+        question: "Qual o nome do anjo que anunciou o nascimento de Jesus a Maria?",
+        answers: [
+            { text: "Miguel", correct: false },
+            { text: "Gabriel", correct: true },
+            { text: "Rafael", correct: false },
+            { text: "Uriel", correct: false }
+        ]
+    },
+    {
+        question: "Qual a festa judaica que celebra a libertação do povo de Israel do Egito?",
+        answers: [
+            { text: "Tabernáculos", correct: false },
+            { text: "Páscoa", correct: true },
+            { text: "Pentecostes", correct: false },
+            { text: "Purim", correct: false }
         ]
     }
-
-]
+];
 
 startButton.addEventListener('click', startQuiz);
 nextQuestion.addEventListener('click', displayNextQuestion);
