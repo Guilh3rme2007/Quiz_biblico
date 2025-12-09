@@ -30,6 +30,96 @@ const questions = [
         ]
     },
     {
+        question: "Quem foi o sumo sacerdote que condenou Jesus perante Pilatos?",
+        answers: [
+            { text: "Caifás", correct: true },
+            { text: "Anás", correct: false },
+            { text: "Herodes", correct: false },
+            { text: "Gamaliel", correct: false }
+        ]
+    },
+    {
+        question: "Quantas pragas Deus enviou sobre o Egito?",
+        answers: [
+            { text: "7", correct: false },
+            { text: "10", correct: true },
+            { text: "12", correct: false },
+            { text: "5", correct: false }
+        ]
+    },
+    {
+        question: "Em qual livro bíblico encontramos a história de Sansão?",
+        answers: [
+            { text: "Juízes", correct: true },
+            { text: "Rute", correct: false },
+            { text: "Samuel", correct: false },
+            { text: "Reis", correct: false }
+        ]
+    },
+    {
+        question: "Qual o nome da cidade onde Paulo teve a visão do 'Macedônio' pedindo ajuda?",
+        answers: [
+            { text: "Atenas", correct: false },
+            { text: "Jerusalém", correct: false },
+            { text: "Trôade", correct: true },
+            { text: "Corinto", correct: false }
+        ]
+    },
+    {
+        question: "Quem foi o pai de Abraão?",
+        answers: [
+            { text: "Isaque", correct: false },
+            { text: "Noé", correct: false },
+            { text: "Terá", correct: true },
+            { text: "Jacó", correct: false }
+        ]
+    },
+    {
+        question: "O livro de Salmos é dividido em quantos livros ou coleções?",
+        answers: [
+            { text: "3", correct: false },
+            { text: "5", correct: true },
+            { text: "7", correct: false },
+            { text: "4", correct: false }
+        ]
+    },
+    {
+        question: "Qual o nome da esposa de Moisés?",
+        answers: [
+            { text: "Miriã", correct: false },
+            { text: "Zípora", correct: true },
+            { text: "Joquebede", correct: false },
+            { text: "Raquel", correct: false }
+        ]
+    },
+    {
+        question: "Qual apóstolo foi escolhido para substituir Judas Iscariotes?",
+        answers: [
+            { text: "Barnabé", correct: false },
+            { text: "Matias", correct: true },
+            { text: "Silas", correct: false },
+            { text: "Timóteo", correct: false }
+        ]
+    },
+    {
+        question: "Jesus andou sobre qual mar/lago?",
+        answers: [
+            { text: "Mar Morto", correct: false },
+            { text: "Mar Vermelho", correct: false },
+            { text: "Mar da Galileia (ou Lago de Genesaré)", correct: true },
+            { text: "Rio Jordão", correct: false }
+        ]
+    },
+    {
+        question: "Qual profeta foi levado ao céu em uma carruagem de fogo?",
+        answers: [
+            { text: "Eliseu", correct: false },
+            { text: "Elias", correct: true },
+            { text: "Isaías", correct: false },
+            { text: "Jeremias", correct: false }
+        ]
+    },
+    {
         question: "Quantos Apóstolos Jesus tinha?",
         answers: [
             { text: "10", correct: false },
@@ -77,7 +167,7 @@ const questions = [
     {
         question: "Qual é o maior mandamento segundo Jesus?",
         answers: [
-            { text: "Amar a Deus acima de tudo", correct: true },
+            { text: "Amar a Deus acima de todas as coisas", correct: true },
             { text: "Não matar", correct: false },
             { text: "Guardar o sábado", correct: false },
             { text: "Honrar pai e mãe", correct: false }
@@ -108,6 +198,78 @@ const questions = [
             { text: "Ezequiel", correct: false },
             { text: "Jeremias", correct: false },
             { text: "Isaías", correct: false }
+        ]
+    },
+    {
+        question: "Quem foi o sumo sacerdote que condenou Jesus perante Pilatos?",
+        answers: [
+            { text: "Caifás", correct: true },
+            { text: "Anás", correct: false },
+            { text: "Herodes", correct: false },
+            { text: "Gamaliel", correct: false }
+        ]
+    },
+    {
+        question: "Quantas pragas Deus enviou sobre o Egito?",
+        answers: [
+            { text: "7", correct: false },
+            { text: "10", correct: true },
+            { text: "12", correct: false },
+            { text: "5", correct: false }
+        ]
+    },
+    {
+        question: "Em qual livro bíblico encontramos a história de Sansão?",
+        answers: [
+            { text: "Juízes", correct: true },
+            { text: "Rute", correct: false },
+            { text: "Samuel", correct: false },
+            { text: "Reis", correct: false }
+        ]
+    },
+    {
+        question: "Quem foi o pai de Abraão?",
+        answers: [
+            { text: "Isaque", correct: false },
+            { text: "Noé", correct: false },
+            { text: "Terá", correct: true },
+            { text: "Jacó", correct: false }
+        ]
+    },
+    {
+        question: "Qual o nome da esposa de Moisés?",
+        answers: [
+            { text: "Miriã", correct: false },
+            { text: "Zípora", correct: true },
+            { text: "Joquebede", correct: false },
+            { text: "Raquel", correct: false }
+        ]
+    },
+    {
+        question: "Qual apóstolo foi escolhido para substituir Judas Iscariotes?",
+        answers: [
+            { text: "Barnabé", correct: false },
+            { text: "Matias", correct: true },
+            { text: "Silas", correct: false },
+            { text: "Timóteo", correct: false }
+        ]
+    },
+    {
+        question: "Jesus andou sobre qual mar/lago?",
+        answers: [
+            { text: "Mar Morto", correct: false },
+            { text: "Mar Vermelho", correct: false },
+            { text: "Mar da Galileia (ou Lago de Genesaré)", correct: true },
+            { text: "Rio Jordão", correct: false }
+        ]
+    },
+    {
+        question: "Qual profeta foi levado ao céu em uma carruagem de fogo?",
+        answers: [
+            { text: "Eliseu", correct: false },
+            { text: "Elias", correct: true },
+            { text: "Isaías", correct: false },
+            { text: "Jeremias", correct: false }
         ]
     },
     {
@@ -276,7 +438,7 @@ const questions = [
         question: "Quem foi o primeiro mártir cristão?",
         answers: [
             { text: "Pedro", correct: false },
-            { text: "Estevão", correct: true },
+            { text: "Estêvão", correct: true },
             { text: "Tiago", correct: false },
             { text: "Paulo", correct: false }
         ]
@@ -352,7 +514,7 @@ const questions = [
         ]
     },
     {
-        question: "Getsemani é o nome do jardim onde Jesus orou antes de ser preso?",
+        question: "Getsêmani é o nome do jardim onde Jesus orou antes de ser preso?",
         answers: [
             { text: "Verdadeiro", correct: true },
             { text: "Falso", correct: false }
@@ -443,7 +605,7 @@ const questions = [
         ]
     },
     {
-        question: "O dicípulo Lucas era pescador?",
+        question: "O discípulo Lucas era pescador?",
         answers: [
             { text: "Verdadeiro", correct: false },
             { text: "Falso", correct: true }
@@ -471,7 +633,7 @@ const questions = [
         ]
     },
     {
-        question: "Segundo Tiago a língua é um fogo que pode contaminar todo o corpo?",
+        question: "Segundo Tiago, a língua é um fogo que pode contaminar todo o corpo?",
         answers: [
             { text: "Verdadeiro", correct: true },
             { text: "Falso", correct: false }
@@ -496,7 +658,7 @@ const questions = [
         ]
     },
     {
-        question: "Qual é o simbolo do Espírito Santo mencionado no batismo de Jesus?",
+        question: "Qual é o símbolo do Espírito Santo mencionado no batismo de Jesus?",
         answers: [
             { text: "Pomba", correct: true },
             { text: "Fogo", correct: false },
@@ -616,7 +778,6 @@ const questions = [
         ]
     }
 ]
-
 
 startButton.addEventListener('click', startQuiz);
 nextQuestion.addEventListener('click', displayNextQuestion);
