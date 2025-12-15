@@ -1,26 +1,26 @@
 const startButton = document.querySelector('.start-quiz');
-const questionContainer = document.querySelector('.questions-container');
-const answersContainer = document.querySelector('.answers-container');
-const questionElement = document.querySelector('.question');
+
+const questionContainer = document.querySelector('#multiple-choices-conteiner');
+const textQuestionContainer = document.querySelector('#text-input-conteiner')
+
+const mcQuestionElement = document.querySelector('#mc-question')
+const mcAnswersContainer = document.querySelector('#mc-answers-conteiner');
+
+const txQuestionElement = document.querySelector('#text-question');
+const txAnswersInput = document.querySelector('#text-answer-input');
+const textSubmitContent = document.querySelector('#text-submit-button');
+const textFeedback = document.querySelector('#text-feedback');
+
+
 const nextQuestion = document.querySelector('.next-question');
 
 let currentQuestionIndex = 0;
 let score = 0;
 
 
-const maxQuestions = 10;
-let askedQuestions = [];
-
-function getRandomQuestions(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
-
 const questions = [
     {
+        type: "mc",
         question: "Qual é o menor livro da Bíblia?",
         answers: [
             { text: "Judas", correct: false },
@@ -30,6 +30,17 @@ const questions = [
         ]
     },
     {
+        type: "mc",
+        question: "Complete o versículo: Respondeu-lhe Jesus: Eu sou o ..., e a verdade, e a vida; ninguém vem ao Pai senão por mim. João 14:6",
+        answers: [
+            { text: "caminho", correct: true},
+            { text: "melhor", correct: false},
+            { text: "primeiro", correct: false},
+            { text: "atalho", correct: false}
+        ]
+    },
+    {
+        type: "mc",
         question: "Quantos Apóstolos Jesus tinha?",
         answers: [
             { text: "10", correct: false },
@@ -39,6 +50,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quantos livros tem o Novo Testamento?",
         answers: [
             { text: "27", correct: true },
@@ -48,6 +60,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Em que monte Jesus foi crucificado?",
         answers: [
             { text: "Monte Sinai", correct: false },
@@ -57,6 +70,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual foi o primeiro milagre de Jesus?",
         answers: [
             { text: "Cura do cego", correct: false },
@@ -66,6 +80,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quem traiu Jesus por 30 moedas de prata?",
         answers: [
             { text: "Pedro", correct: false },
@@ -75,6 +90,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual é o maior mandamento segundo Jesus?",
         answers: [
             { text: "Amar a Deus acima de tudo", correct: true },
@@ -84,6 +100,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual era a profissão de Jesus?",
         answers: [
             { text: "Pescador", correct: false },
@@ -93,6 +110,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual o profeta que desafiou os profetas de Baal no Monte Carmelo?",
         answers: [
             { text: "Isaías", correct: false },
@@ -102,6 +120,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quem foi lançado na cova dos leões?",
         answers: [
             { text: "Daniel", correct: true },
@@ -111,6 +130,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual é o primeiro livro da Bíblia?",
         answers: [
             { text: "Gênesis", correct: true },
@@ -120,6 +140,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual o nome do segundo rei de Israel?",
         answers: [
             { text: "Davi", correct: true },
@@ -129,6 +150,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual o maior livro da Bíblia?",
         answers: [
             { text: "Salmos", correct: true },
@@ -138,6 +160,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quem foi o primeiro homem criado por Deus?",
         answers: [
             { text: "Adão", correct: true },
@@ -147,6 +170,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual é o nome do apóstolo conhecido como 'o discípulo amado'?",
         answers: [
             { text: "Pedro", correct: false },
@@ -156,6 +180,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quantos dias e noites choveu durante o dilúvio de Noé?",
         answers: [
             { text: "30", correct: false },
@@ -165,6 +190,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Onde Jesus nasceu?",
         answers: [
             { text: "Jerusalém", correct: false },
@@ -174,6 +200,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Onde José e seus irmãos habitaram depois da morte de seu pai?",
         answers: [
             { text: "Egito", correct: true },
@@ -183,6 +210,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quem foi o profeta que confrontou o rei Davi sobre seu pecado com Bate-Seba?",
         answers: [
             { text: "Natã", correct: true },
@@ -192,6 +220,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual é o nome do rio onde Jesus foi batizado?",
         answers: [
             { text: "Rio Nilo", correct: false },
@@ -201,6 +230,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quem era o rei da Babilônia quando Daniel foi lançado na cova dos leões?",
         answers: [
             { text: "Ciro", correct: false },
@@ -210,6 +240,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual é o nome do apóstolo que escreveu o livro de Apocalipse?",
         answers: [
             { text: "Pedro", correct: false },
@@ -219,6 +250,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual o nome do Apóstolo que era perseguidor dos cristãos antes de sua conversão?",
         answers: [
             { text: "Pedro", correct: false },
@@ -228,6 +260,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual é a candeia do corpo segundo Jesus?",
         answers: [
             { text: "O coração", correct: false },
@@ -237,6 +270,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Em que cidade Zaqueu encontrou Jesus?",
         answers: [
             { text: "Jerusalém", correct: false },
@@ -246,6 +280,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quem foi o profeta que interpretou os sonhos do faraó no Egito?",
         answers: [
             { text: "Moisés", correct: false },
@@ -255,6 +290,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quais são os frutos do Espírito segundo Gálatas 5:22-23?",
         answers: [
             { text: "Amor, alegria, paz, paciência, benignidade, bondade, fidelidade, mansidão, domínio próprio", correct: true },
@@ -264,6 +300,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual não é um dos Dez Mandamentos?",
         answers: [
             { text: "Não matarás", correct: false },
@@ -273,6 +310,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quem foi o primeiro mártir cristão?",
         answers: [
             { text: "Pedro", correct: false },
@@ -282,6 +320,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quem foi resuscitado por Jesus após quatro dias de morte?",
         answers: [
             { text: "Lázaro", correct: true },
@@ -291,6 +330,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Jonas foi engolido por um grande peixe",
         answers: [
             { text: "Verdadeiro", correct: true },
@@ -298,6 +338,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual o último livro do Novo Testamento?",
         answers: [
             { text: "Judas", correct: false },
@@ -307,6 +348,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual é o nome do discípulo que duvidou da ressurreição de Jesus até ver as marcas dos cravos em suas mãos?",
         answers: [
             { text: "Pedro", correct: false },
@@ -316,6 +358,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual é o último livro do Antigo Testamento?",
         answers: [
             { text: "Malaquias", correct: true },
@@ -325,6 +368,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quantos capítulos tem o livro de Salmos?",
         answers: [
             { text: "150", correct: true },
@@ -334,6 +378,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "O que o povo adorou enquanto Moisés estava no monte Sinai recebendo os Dez Mandamentos?",
         answers: [
             { text: "Um bezerro de ouro", correct: true },
@@ -343,6 +388,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quem foi lançado na fornalha ardente por se recusar a adorar uma estátua de ouro?",
         answers: [
             { text: "Sadraque, Mesaque e Abednego", correct: true },
@@ -352,6 +398,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Getsemani é o nome do jardim onde Jesus orou antes de ser preso?",
         answers: [
             { text: "Verdadeiro", correct: true },
@@ -359,6 +406,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual era a profissão de Mateus antes de seguir Jesus?",
         answers: [
             { text: "Pescador", correct: false },
@@ -368,6 +416,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Paulo escreveu quantas cartas no Novo Testamento?",
         answers: [
             { text: "10", correct: false },
@@ -377,6 +426,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Paulo disse que os crentes de Corinto estavam divididos",
         answers: [
             { text: "Verdadeiro", correct: true },
@@ -384,6 +434,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "O texto de 1 Coríntios 6:19-20 fala que somente o corpo dos líderes é templo do Espírito Santo",
         answers: [
             { text: "Verdadeiro", correct: false },
@@ -391,6 +442,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "A santa ceia foi instituída como uma sobremesa após o jantar",
         answers: [
             { text: "Verdadeiro", correct: false },
@@ -398,6 +450,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quem é o consolador prometido por Jesus em João 14?",
         answers: [
             { text: "O Espírito Santo", correct: true },
@@ -407,6 +460,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual dessas opções não é uma das bem-aventuranças mencionadas por Jesus no Sermão da Montanha?",
         answers: [
             { text: "Bem-aventurados os humildes de espírito", correct: false },
@@ -416,6 +470,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quais foram as promessas feitas pelo diabo a Jesus durante as tentações no deserto?",
         answers: [
             { text: "Poder, riqueza e fama", correct: false },
@@ -425,6 +480,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quais eram os tipos de solo mencionados na parábola do semeador?",
         answers: [
             { text: "Solo rochoso, solo arenoso, solo fértil e solo pedregoso", correct: false },
@@ -434,6 +490,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual animal falou com Balaão?",
         answers: [
             { text: "Cavalo", correct: false },
@@ -443,6 +500,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "O dicípulo Lucas era pescador?",
         answers: [
             { text: "Verdadeiro", correct: false },
@@ -450,6 +508,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Tiago afirmou que a fé sem obras é morta?",
         answers: [
             { text: "Verdadeiro", correct: true },
@@ -457,6 +516,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Tiago afirma que o homem de coração dobrado é amigo de Deus?",
         answers: [
             { text: "Verdadeiro", correct: false },
@@ -464,6 +524,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Tiago afirma que somos tentados por Deus?",
         answers: [
             { text: "Verdadeiro", correct: false },
@@ -471,6 +532,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Segundo Tiago a língua é um fogo que pode contaminar todo o corpo?",
         answers: [
             { text: "Verdadeiro", correct: true },
@@ -478,6 +540,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual filho de Jacó foi vendido como escravo pelos seus irmãos?",
         answers: [
             { text: "Efraim", correct: false },
@@ -487,6 +550,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Contra que animais Davi lutou quando era jovem?",
         answers: [
             { text: "Leão e urso", correct: true },
@@ -496,6 +560,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual é o simbolo do Espírito Santo mencionado no batismo de Jesus?",
         answers: [
             { text: "Pomba", correct: true },
@@ -505,6 +570,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quem foi o profeta que ungiu Saul como o primeiro rei de Israel?",
         answers: [
             { text: "Samuel", correct: true },
@@ -514,6 +580,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quem foi a primeira pessoa a ver Jesus ressuscitado?",
         answers: [
             { text: "Pedro", correct: false },
@@ -523,6 +590,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Onde Moisés recebeu os Dez Mandamentos?",
         answers: [
             { text: "Monte Sinai", correct: true },
@@ -532,6 +600,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Onde cairam as sementes que deram fruto cem, sessenta e trinta vezes?",
         answers: [
             { text: "No solo rochoso", correct: false },
@@ -541,6 +610,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "A fruta proibida que Adão e Eva comeram era maçã?",
         answers: [
             { text: "Verdadeiro", correct: false },
@@ -548,6 +618,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quantas virgens são mencionadas na parábola de Jesus?",
         answers: [
             { text: "6", correct: false },
@@ -557,6 +628,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Tarso, Lícia, Sidom, Jope são cidades ou nomes de pessoas?",
         answers: [
             { text: "Cidades", correct: true },
@@ -564,6 +636,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Jonas pregou em Nínive?",
         answers: [
             { text: "Verdadeiro", correct: true },
@@ -571,6 +644,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual é o nome do gigante que Davi derrotou com uma funda?",
         answers: [
             { text: "Golias", correct: true },
@@ -580,6 +654,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual foi o profeta que teve uma visão de um vale de ossos secos?",
         answers: [
             { text: "Ezequiel", correct: true },
@@ -589,6 +664,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Quem foi o pai de João Batista?",
         answers: [
             { text: "Zacarias", correct: true },
@@ -598,6 +674,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question:"Qual foi o profeta que viu o trono de Deus em uma visão?",
         answers: [
             { text: "Isaías", correct: true },
@@ -607,6 +684,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Qual foi o autor do livro de Atos dos Apóstolos?",
         answers: [
             { text: "Pedro", correct: false },
@@ -616,6 +694,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Paulo é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -623,6 +702,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Herodes é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -630,6 +710,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Tiago é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -637,6 +718,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Barnabé é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -644,6 +726,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Simeão é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -651,6 +734,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Saulo é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -658,6 +742,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Cornélio é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -665,6 +750,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Prócoro é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -672,6 +758,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Nicanor é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -679,6 +766,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Marta é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -686,6 +774,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Timóteo é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -693,6 +782,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Levi é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -700,6 +790,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Ananias é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -707,6 +798,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Eneias é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -714,6 +806,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Silas é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -721,6 +814,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Zebedeu é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -728,6 +822,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Tomé é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -735,6 +830,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Bartolomeu é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -742,6 +838,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Alfeu é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -749,6 +846,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Simão é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -756,6 +854,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Lázaro é uma:",
         answers: [
             { text: "Cidade", correct: false},
@@ -763,6 +862,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Ai é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -770,6 +870,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Cesareia é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -777,12 +878,15 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Betânia é uma:",
         answers: [
             { text: "Cidade", correct: true},
             { text: "Pessoa", correct: false}
         ]
-    },{
+    },
+    {
+        type: "mc",
         question: "Filístia é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -790,6 +894,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Galileia é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -797,6 +902,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Damasco é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -804,6 +910,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Tarso é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -811,6 +918,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Bitínia é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -818,6 +926,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Cirene é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -825,6 +934,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Emaús é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -832,6 +942,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Betsaida é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -839,6 +950,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Samaria é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -846,6 +958,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Bereia é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -853,6 +966,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Jope é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -860,6 +974,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Antioquia é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -867,6 +982,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Sidom é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -874,6 +990,7 @@ const questions = [
         ]
     },
     {
+        type: "mc",
         question: "Malta é uma:",
         answers: [
             { text: "Cidade", correct: true},
@@ -881,68 +998,129 @@ const questions = [
         ]
     }
 
-]
+];
 
+const textQuestions = [
+    {
+        type: "text",
+        question: "Respondeu-lhe Jesus: Eu sou o ..., e a verdade, e a vida; ninguém vem ao Pai senão por mim. (João 14:6)",
+        correctAnswer: "caminho"
+    },
+    {
+        type: "text",
+        question: "Mas o fruto do Espírito é: ..., alegria, paz, longanimidade, benignidade, bondade, fidelidade, mansidão, domínio próprio. (Gálatas 5:22)",
+        correctAnswer: "amor"
+    },
+    {
+        type: "text",
+        question: "¹ Não se turbe o vosso coração; credes em Deus, crede também em ... . (João 14:1)",
+        correctAnswer: "mim"
+    },
+    {
+        type: "text",
+        question: "Não vos ... com este mundo, mas transformai-vos pela renovação da vossa mente. (Romanos 12:2)",
+        correctAnswer: "conformeis"
+    }
+];
+
+const allQuestions = [...questions, ...textQuestions];
+const maxQuestions = 10;
+let askedQuestions = [];
+
+
+function getRandomQuestions(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
 startButton.addEventListener('click', startQuiz);
 nextQuestion.addEventListener('click', displayNextQuestion);
 
+
 function startQuiz() {
-    const shuffledQuestions = getRandomQuestions([...questions]);
+    const shuffledQuestions = getRandomQuestions([...allQuestions]);
     askedQuestions = shuffledQuestions.slice(0, maxQuestions);
     currentQuestionIndex = 0;
     score = 0;
     startButton.classList.add('hide');
-    questionContainer.classList.remove('hide');
+
+    questionContainer.classList.add('hide');
+    textQuestionContainer.classList.add('hide');
+
     displayNextQuestion();
 }
 
 function displayNextQuestion() {
     resetState();
 
-    if(askedQuestions.length === currentQuestionIndex){
+    if(currentQuestionIndex >= askedQuestions.length){
         return finishQuiz();
     }
 
     const currentQuestion = askedQuestions[currentQuestionIndex];
-    questionElement.textContent = currentQuestion.question;
 
-    const shuffledAnswers = getRandomQuestions([...currentQuestion.answers]);
+    if(currentQuestion.type === "mc"){
+        questionContainer.classList.remove('hide');
+        mcQuestionElement.textContent = currentQuestion.question;
 
-    shuffledAnswers.forEach(answers => {
-        const button = document.createElement('button');
-        button.textContent = answers.text;
-        button.classList.add('button', 'answers');
-        if(answers.correct){
-            button.dataset.correct = answers.correct;
-        }
-        answersContainer.appendChild(button);
+        const shuffledAnswers = getRandomQuestions([...currentQuestion.answers]);
+
+        shuffledAnswers.forEach(answers => {    
+            const button = document.createElement('button');
+            button.textContent = answers.text;
+            button.classList.add('button', 'answers');
+            if(answers.correct){
+                button.dataset.correct = answers.correct;
+            }
+        mcAnswersContainer.appendChild(button);
         button.addEventListener('click', selectAnswer);
     })
+
+    } else if (currentQuestion.type === "text") {
+        textQuestionContainer.classList.remove('hide');
+        txQuestionElement.textContent = currentQuestion.question;
+
+        textSubmitContent.onclick = submitTextAnswer;
+    }
+    
 }
 
 function resetState() {
-    while (answersContainer.firstChild){
-        answersContainer.removeChild(answersContainer.firstChild);
+    while (mcAnswersContainer.firstChild) {
+        mcAnswersContainer.removeChild(mcAnswersContainer.firstChild);
     }
 
     document.body.removeAttribute('class');
+
+    questionContainer.classList.add('hide');
+    textQuestionContainer.classList.add('hide');
     nextQuestion.classList.add('hide');
+
+    txAnswersInput.value = '';
+    textFeedback.classList.add('hide');
+    textFeedback.textContent = '';
+    textSubmitContent.disabled = false;
+
 }
 
 function selectAnswer(event) {
     const selectedButton = event.target;
-    if(selectedButton.dataset.correct){
+    const isCorrect = selectedButton.dataset.correct === "true";
+
+    if (isCorrect) {
         document.body.classList.add('correct');
         score++;
-    }else{
+    } else {
         document.body.classList.add('wrong');
     }
 
     document.querySelectorAll('.answers').forEach(button => {
-        if(button.dataset.correct){
+        if (button.dataset.correct === "true") {
             button.classList.add('correct');
-        }else{
+        } else {
             button.classList.add('wrong');
         }
 
@@ -951,6 +1129,28 @@ function selectAnswer(event) {
 
     nextQuestion.classList.remove('hide');
     currentQuestionIndex++;
+}
+
+function submitTextAnswer() {
+    const currentQuestion = askedQuestions[currentQuestionIndex];
+    const userAnswer = txAnswersInput.value.trim().toLowerCase();
+    const correctAnswer = currentQuestion.correctAnswer.toLowerCase();
+
+    textSubmitContent.disabled = true;
+    document.body.classList.remove('correct', 'wrong');
+
+    if(userAnswer === correctAnswer) {
+        document.body.classList.add('correct');
+        textFeedback.textContent = 'Correto!';
+        score++;
+    } else {
+        document.body.classList.add('wrong');
+        textFeedback.textContent = `Errado. A resposta correta era: "${currentQuestion.correctAnswer}"`;
+    }
+
+    textFeedback.classList.remove('hide');
+    nextQuestion.classList.remove('hide');
+    currentQuestionIndex ++;
 }
 
 function finishQuiz() {
@@ -973,13 +1173,29 @@ function finishQuiz() {
             mensage = "Precisa melhorar!";
     }
 
-    questionElement.innerHTML =
+    questionContainer.classList.add('hide');
+    textQuestionContainer.classList.add('hide');
+    nextQuestion.classList.add('hide');
+
+    mcQuestionElement.innerHTML =
       `
       <h2 class = "final-message"> Quiz Finalizado!</h2> 
       <p class="final-message"> Você acertou ${score} de ${totalQuestions} perguntas.
-      <br> Desempenho: ${performance}%. ${mensage}
+      <br> Desempenho: ${performance}%.
       <span>Resultado: ${mensage}</span>
       </p>
-      <button onclick="startQuiz()" class="button">Recomeçar Quiz</button>
       `;
+
+    questionContainer.classList.remove('hide');
+
+    const restartButton = document.createElement('button');
+    restartButton.textContent = 'Recomeçar Quiz';
+    restartButton.classList.add('button', 'start-quiz');
+    restartButton.addEventListener('click', startQuiz)
+
+    while (mcAnswersContainer.firstChild) {
+        mcAnswersContainer.removeChild(mcAnswersContainer.firstChild);
+    }
+    mcAnswersContainer.appendChild(restartButton);
+    
 }

@@ -8,19 +8,28 @@
     <link rel="shortcut icon" href="images/biblia_colorida.png" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
-        <div class="questions-container hide">
-           <span class="question">Pergunta 1</span>
-           <div class="answers-container">
+    <div class="conteiner">
+        <div class="questions-conteiner hide" id="multiple-choices-conteiner">
+           <span class="question" id="mc-question">Pergunta 1</span>
+           <div class="answers-conteiner" id="mc-answers-conteiner">
             <button class="answers button">Resposta 1</button>
             <button class="answers button">Resposta 2</button>
             <button class="answers button">Resposta 3</button>
             <button class="answers button">Resposta 4</button>
            </div>
         </div>
-         <div class="controls-container">
+
+        <div class="questions-conteiner hide" id="text-input-conteiner">
+            <span class="question" id="text-question">Complete o versículo:</span>
+            <div class="text-answers-conteiner">
+                <input type="text" id="text-answer-input" placeholder="digite a parte que falta" class="text-input">
+                <button class="button " id="text-submit-button">Enviar resposta</button>
+            </div>
+            <p class="text-feedback hide" id="text-feedback"></p>
+        </div>
+         <div class="controls-conteiner">
             <button class="start-quiz button" onclick="startQuiz()">Começar Quiz!</button>
-            <button class="next-question button hide">Próxima Pergunta</button>
+            <button class="next-question button hide ">Próxima Pergunta</button>
            </div>
     </div>
     <script src="script.js"></script>
