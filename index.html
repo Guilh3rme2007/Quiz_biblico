@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#243b32">
+  <title>Quiz Bíblico</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="shortcut icon" href="images/biblia_colorida.png" type="image/x-icon">
+</head>
+<body>
+  <main class="app-container">
+    <section id="home-screen" class="screen home-screen">
+      <img class="logo" src="images/biblia_colorida.png" alt="Bíblia">
+      <p class="eyebrow">APRENDA • RELEMBRE • COMPARTILHE</p>
+      <h1>Quiz Bíblico</h1>
+      <p class="intro">Escolha como deseja testar seus conhecimentos bíblicos.</p>
+      <div class="mode-grid">
+        <button class="mode-card" data-mode="general">
+          <span class="mode-icon">✦</span><strong>Modo Geral</strong>
+          <span>Todas as perguntas e atividades do quiz.</span>
+        </button>
+        <button class="mode-card" data-mode="beatitudes">
+          <span class="mode-icon">♡</span><strong>Modo Bem-aventuranças</strong>
+          <span>Conteúdo relacionado às Bem-aventuranças de Mateus 5.</span>
+        </button>
+        <button class="mode-card" data-mode="verses">
+          <span class="mode-icon">▤</span><strong>Modo Completar Versículo</strong>
+          <span>Complete os trechos bíblicos digitando a resposta.</span>
+        </button>
+        <button class="mode-card" data-mode="questions">
+          <span class="mode-icon">☷</span><strong>Modo Somente Perguntas</strong>
+          <span>Múltipla escolha e verdadeiro ou falso, sem digitação.</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="quiz-screen" class="screen quiz-screen hide">
+      <header class="quiz-header">
+        <button id="home-button" class="back-button" type="button">← Menu principal</button>
+        <span id="mode-label" class="mode-label"></span>
+      </header>
+      <div class="progress-area">
+        <div class="progress-copy"><span id="question-counter">Pergunta 1</span><span id="score-counter">Acertos: 0</span></div>
+        <div class="progress-track"><div id="progress-bar" class="progress-bar"></div></div>
+      </div>
+      <div class="questions-container hide" id="multiple-choices-container">
+        <span class="question" id="mc-question">Pergunta</span>
+        <div class="answers-container" id="mc-answers-container"></div>
+      </div>
+      <div class="questions-container hide" id="text-input-container">
+        <span class="question" id="text-question">Complete o versículo:</span>
+        <div class="text-answers-container">
+          <input type="text" id="text-answer-input" placeholder="Digite a parte que falta" class="text-input" autocomplete="off">
+          <button class="button" id="text-submit-button" type="button">Enviar resposta</button>
+        </div>
+        <p class="text-feedback hide" id="text-feedback" aria-live="polite"></p>
+      </div>
+      <div class="controls-container">
+        <button class="button next-question hide" id="next-question" type="button">Próxima pergunta</button>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
