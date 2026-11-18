@@ -1570,3 +1570,116 @@ function returnToMenu() {
   mcAnswersContainer.replaceChildren();
   progressBar.style.width = "0%";
 }
+
+// Preferências de acessibilidade e controles da interface
+(() => {
+  const root = document.documentElement;
+  const menuToggle = document.querySelector('#menu-toggle');
+  const panel = document.querySelector('#accessibility-panel');
+  const panelClose = document.querySelector('#panel-close');
+  const backdrop = document.querySelector('#panel-backdrop');
+  const themeSelect = document.querySelector('#theme-select');
+  const contrastToggle = document.querySelector('#contrast-toggle');
+  const fontRange = document.querySelector('#font-size-range');
+  const fontValue = document.querySelector('#font-size-value');
+  const resetButton = document.querySelector('#reset-accessibility');
+  const fullscreenButton = document.querySelector('#fullscreen-button');
+  const themeColor = document.querySelector('meta[name="theme-color"]');
+  const STORAGE_KEY = 'quizBiblicoAccessibility';
+  const defaults = { theme: 'light', contrast: false, fontSize: 100 };
+
+  function readPreferences() {
+    try {
+      return { ...defaults, ...(JSON.parse(localStorage.getItem(STORAGE_KEY)) || {}) };
+    } catch (_) {
+      return { ...defaults };
+    }
+  }
+
+  let preferences = readPreferences();
+
+  function savePreferences() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(preferences)); } catch (_) { /* armazenamento indisponível */ }
+  }
+
+  function applyPreferences() {
+    root.dataset.theme = preferences.theme === 'dark' ? 'dark' : 'light';
+    root.classList.toggle('high-contrast', Boolean(preferences.contrast));
+    root.style.setProperty('--base-font-size', `${preferences.fontSize}%`);
+    themeSelect.value = preferences.theme;
+    contrastToggle.checked = Boolean(preferences.contrast);
+    fontRange.value = String(preferences.fontSize);
+    fontValue.value = `${preferences.fontSize}%`;
+    fontValue.textContent = `${preferences.fontSize}%`;
+    if (themeColor) themeColor.setAttribute('content', preferences.theme === 'dark' ? '#202923' : '#ffffff');
+  }
+
+  function openPanel() {
+    document.body.classList.add('panel-open');
+    menuToggle.setAttribute('aria-expanded', 'true');
+    panel.setAttribute('aria-hidden', 'false');
+    panelClose.focus();
+  }
+
+  function closePanel() {
+    document.body.classList.remove('panel-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    panel.setAttribute('aria-hidden', 'true');
+    menuToggle.focus();
+  }
+
+  menuToggle.addEventListener('click', openPanel);
+  panelClose.addEventListener('click', closePanel);
+  backdrop.addEventListener('click', closePanel);
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && document.body.classList.contains('panel-open')) closePanel();
+  });
+
+  themeSelect.addEventListener('change', () => {
+    preferences.theme = themeSelect.value;
+    applyPreferences();
+    savePreferences();
+  });
+  contrastToggle.addEventListener('change', () => {
+    preferences.contrast = contrastToggle.checked;
+    applyPreferences();
+    savePreferences();
+  });
+  fontRange.addEventListener('input', () => {
+    preferences.fontSize = Number(fontRange.value);
+    applyPreferences();
+    savePreferences();
+  });
+  resetButton.addEventListener('click', () => {
+    preferences = { ...defaults };
+    applyPreferences();
+    savePreferences();
+  });
+
+  async function toggleFullscreen() {
+    try {
+      if (!document.fullscreenElement) {
+        const target = document.documentElement;
+        if (target.requestFullscreen) await target.requestFullscreen();
+        else if (target.webkitRequestFullscreen) target.webkitRequestFullscreen();
+      } else if (document.exitFullscreen) {
+        await document.exitFullscreen();
+      }
+    } catch (error) {
+      // Alguns navegadores/dispositivos não permitem tela cheia via página.
+      alert('A tela cheia não está disponível neste navegador. Você pode adicionar o site à tela inicial ou usar a opção de tela cheia do navegador.');
+    }
+  }
+
+  function updateFullscreenButton() {
+    const isFullscreen = Boolean(document.fullscreenElement || document.webkitFullscreenElement);
+    fullscreenButton.textContent = isFullscreen ? '⤢' : '⛶';
+    fullscreenButton.setAttribute('aria-label', isFullscreen ? 'Sair da tela cheia' : 'Ativar tela cheia');
+    fullscreenButton.title = isFullscreen ? 'Sair da tela cheia' : 'Tela cheia';
+  }
+
+  fullscreenButton.addEventListener('click', toggleFullscreen);
+  document.addEventListener('fullscreenchange', updateFullscreenButton);
+  document.addEventListener('webkitfullscreenchange', updateFullscreenButton);
+  applyPreferences();
+})();
